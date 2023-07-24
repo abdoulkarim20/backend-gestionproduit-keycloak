@@ -20,7 +20,7 @@ public class CategorieController {
         return iCategorie.save(categorie);
     }
     @GetMapping("")
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<Categorie>all(){
         return iCategorie.allCategorie();
     }

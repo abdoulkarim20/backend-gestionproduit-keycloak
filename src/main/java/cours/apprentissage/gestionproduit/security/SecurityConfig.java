@@ -30,7 +30,8 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         http.csrf().disable();
         /*Autoriser les url qu'on veux voir sans la connexion*/
         http.authorizeRequests().antMatchers(
-                "/h2-console/**").permitAll();
+                "/h2-console/**",
+                "/categories/**").permitAll();
         http.headers().frameOptions().disable();
         /*Proteger les ressources*/
         http.authorizeRequests().anyRequest().authenticated();
